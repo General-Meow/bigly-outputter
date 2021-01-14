@@ -16,7 +16,11 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<sonar.projectKey>General-Meow_bigly-persister</sonar.projectKey>
+		<sonar.organization>general-meow</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
+
 
 	<dependencies>
 		<dependency>
