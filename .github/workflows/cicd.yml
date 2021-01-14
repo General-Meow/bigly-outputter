@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        ref: main
+        with:
+          ref: main
 
       - uses: actions/setup-java@v1
         with:
@@ -20,7 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        ref: main
+        with:
+          ref: main
 
       - uses: actions/setup-java@v1
         with:
@@ -39,7 +41,8 @@ jobs:
     needs: [code-quality, tests]
     steps:
       - uses: actions/checkout@v2
-        ref: main
+        with:
+          ref: main
 
       - uses: actions/setup-java@v1
         with:
