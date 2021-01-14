@@ -1,10 +1,10 @@
-package com.paulhoang.biglypersister;
+package com.paulhoang.outputter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BiglyPersisterApplicationTests {
+class BiglyOutputterApplicationTests {
 
 	@Test
 	void contextLoads() {

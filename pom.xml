@@ -9,14 +9,14 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.paulhoang</groupId>
-	<artifactId>bigly-persister</artifactId>
+	<artifactId>bigly-outputter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bigly-outputter</name>
-	<description>read data from the company_prices topic and persist</description>
+	<description>read data from the company_prices topic and output it to standard out</description>
 
 	<properties>
 		<java.version>11</java.version>
-		<sonar.projectKey>General-Meow_bigly-persister</sonar.projectKey>
+		<sonar.projectKey>General-Meow_bigly-outputter</sonar.projectKey>
 		<sonar.organization>general-meow</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>

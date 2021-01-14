@@ -54,19 +54,19 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: bigly-persister-latest
-          path: ./target/bigly-persister*.jar
+          name: bigly-outputter-latest
+          path: ./target/bigly-outputter*.jar
 
       - name: build docker image
         run: |
           ./mvnw clean spring-boot:build-image
-          docker tag bigly-persister:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }} generalmeow/bigly-persister:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }}
-          docker tag bigly-persister:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }} generalmeow/bigly-persister:latest
+          docker tag bigly-outputter:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }} generalmeow/bigly-outputter:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }}
+          docker tag bigly-outputter:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }} generalmeow/bigly-outputter:latest
 
       - name: scan
         uses: anchore/scan-action@v2
         with:
-          image: "generalmeow/bigly-persister:latest"
+          image: "generalmeow/bigly-outputter:latest"
 #          fail-build: true
 #          severity-cutoff: critical
 
@@ -78,5 +78,5 @@ jobs:
 
       - name: upload docker image
         run: |
-          docker push generalmeow/bigly-persister:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }}
-          docker push generalmeow/bigly-persister:latest
+          docker push generalmeow/bigly-outputter:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }}
+          docker push generalmeow/bigly-outputter:latest

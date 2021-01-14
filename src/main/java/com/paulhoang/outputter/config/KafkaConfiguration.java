@@ -1,6 +1,5 @@
-package com.paulhoang.biglypersister.config;
+package com.paulhoang.outputter.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
