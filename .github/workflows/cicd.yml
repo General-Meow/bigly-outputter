@@ -57,6 +57,9 @@ jobs:
         id: image_version_step
         run: echo "::set-output name=ARTIFACT_VERSION::$(./mvnw help:evaluate -Dexpression=project.version | egrep -v '(^\[|Download\w+:)')"
 
+      - name: echo artifact version
+        run: echo ${{ steps.image_version_step.outputs.ARTIFACT_VERSION }}
+
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
