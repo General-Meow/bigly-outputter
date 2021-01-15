@@ -64,8 +64,10 @@ jobs:
           path: ./target/bigly-outputter*.jar
 
       - name: build docker image
+        run: ./mvnw clean spring-boot:build-image
+
+      - name: tag docker images
         run: |
-          ./mvnw clean spring-boot:build-image
           docker tag bigly-outputter:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }} generalmeow/bigly-outputter:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }}
           docker tag bigly-outputter:${{ steps.image_version_step.outputs.ARTIFACT_VERSION }} generalmeow/bigly-outputter:latest
 
