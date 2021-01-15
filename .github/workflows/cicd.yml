@@ -53,6 +53,9 @@ jobs:
       - name: build with gradle
         run: ./mvnw clean test package
 
+      - name: install xpath
+        run: sudo apt install -y libxml-xpath-perl
+
       - name: get artifact version
         id: image_version_step
         run: echo "::set-output name=ARTIFACT_VERSION::$(xpath -q -e '//project/version/text()' pom.xml)"
