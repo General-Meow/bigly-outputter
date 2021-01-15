@@ -55,7 +55,7 @@ jobs:
 
       - name: get artifact version
         id: image_version_step
-        run: echo "::set-output name=ARTIFACT_VERSION::$(xpath -q -e "//project/version/text()" pom.xml)"
+        run: echo "::set-output name=ARTIFACT_VERSION::$(xpath -q -e '//project/version/text()' pom.xml)"
 
       - name: echo artifact version
         run: echo ${{ steps.image_version_step.outputs.ARTIFACT_VERSION }}
