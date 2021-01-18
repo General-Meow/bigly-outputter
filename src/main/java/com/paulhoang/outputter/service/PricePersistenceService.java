@@ -9,6 +9,7 @@ public class PricePersistenceService {
 
   @KafkaListener(topics = "company_price", groupId = "bigly-outputter")
   public void persistCompanyPriceData(@Payload String payload) {
+    System.out.println("Got new data from topic 'company_price'");
     System.out.println(payload);
   }
 }
